@@ -1,0 +1,70 @@
+.helloText {
+  color: rgb(255, 0, 0);
+  z-index: 10;
+}
+
+.navbarAccount {
+  color: rgb(255, 255, 255);
+  font-size: 16px;
+  margin-top: 5px;
+  font-family: "Poppins", sans-serif;
+}
+
+.navbar {
+  border-bottom: 1px solid #6e6e6e;
+}
+
+.homeContent {
+  margin-top: -20px;
+}
+.navbarHome {
+  background-color: rgb(0, 0, 0);
+}
+
+.navIcon {
+  /* position in line with navbarAccount */
+  margin-top: -18px;
+
+  position: fixed;
+  left: 100rem;
+  top: 0.9rem;
+}
+
+.nav-link {
+  color: rgb(165, 165, 165);
+  font-size: 20px;
+  margin-top: 1px;
+  font-family: "Poppins", sans-serif;
+}
+
+.nav-link:hover {
+  color: rgb(255, 255, 255);
+}
+
+.navbar-brand {
+  font-family: "Poppins", sans-serif;
+  color: rgb(165, 165, 165);
+  font-size: 20px;
+  margin-top: 1px;
+}
+
+.navbar-brand:hover {
+  color: rgb(255, 255, 255);
+}
+
+.tooltiptext {
+  color: rgb(165, 165, 165);
+  font-size: large;
+}
+
+.tooltiptext:hover {
+  color: rgb(255, 255, 255);
+}
+
+.accounttooltip {
+  z-index: 100;
+}
+
+.muiIcon {
+  cursor: pointer;
+}

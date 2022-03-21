@@ -1,0 +1,7 @@
+.walletAddress {
+  font-size: 1rem;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  display: flex;
+}

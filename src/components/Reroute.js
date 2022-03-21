@@ -4,7 +4,6 @@ import Identicon from 'identicon.js';
 import Navbar from './Navbar'
 import Main from './Main'
 import Web3 from 'web3';
-import './App.css';
 import Home from './Home';
 import NavbarHome from './NavbarHome';
 
@@ -12,8 +11,7 @@ import NavbarHome from './NavbarHome';
 const ipfsClient = require('ipfs-http-client')
 const ipfs = ipfsClient({ host: 'ipfs.infura.io', port: 5001, protocol: 'https' }) // leaving out the arguments will default to these values
 
-class App extends Component {
-
+class Reroute extends Component {
   async componentWillMount() {
     await this.loadWeb3()
     await this.loadBlockchainData()
@@ -40,26 +38,6 @@ class App extends Component {
     // Network ID
     const networkId = await web3.eth.net.getId()
     const networkData = Decentragram.networks[networkId]
-    if(networkData) {
-      const decentragram = new web3.eth.Contract(Decentragram.abi, networkData.address)
-      this.setState({ decentragram })
-      const imagesCount = await decentragram.methods.imageCount().call()
-      this.setState({ imagesCount })
-      // Load images
-      for (var i = 1; i <= imagesCount; i++) {
-        const image = await decentragram.methods.images(i).call()
-        this.setState({
-          images: [...this.state.images, image]
-        })
-      }
-      // Sort images. Show highest tipped images first
-      this.setState({
-        images: this.state.images.sort((a,b) => b.tipAmount - a.tipAmount )
-      })
-      this.setState({ loading: false})
-    } else {
-      window.alert('Decentragram contract not deployed to detected network.')
-    }
   }
 
   captureFile = event => {
@@ -119,17 +97,8 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Navbar account={this.state.account} />
-        { this.state.loading
-          ? <div id="loader" className="text-center mt-5"><p>Loading...</p></div>
-          : <Main
-              images={this.state.images}
-              captureFile={this.captureFile}
-              uploadImage={this.uploadImage}
-              tipImageOwner={this.tipImageOwner}
-              account={this.state.account}
-            />
-        }
+        <NavbarHome account={this.state.account} />
+        <Home />
         
 
       </div>
@@ -137,4 +106,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Reroute;
