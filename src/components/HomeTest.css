@@ -354,10 +354,6 @@
   font-size: 1.2rem;
 }
 
-li:not(:last-child) {
-  margin-bottom: 10px;
-}
-
 .title {
   font-family: "Montserrat";
   text-align: center;

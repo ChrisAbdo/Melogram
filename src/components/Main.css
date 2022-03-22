@@ -1,12 +1,412 @@
-.row1 {
-  justify-content: center;
-  /* place cards under lead text */
+.uploadHeader {
   position: absolute;
-  top: 23rem;
+  top: 105px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 130px;
+  background-color: #000000;
+  border-bottom: 1px solid #000000;
+  z-index: 10000;
+  text-align: center;
+  margin-top: -40px;
+  border-bottom: 1px solid #6e6e6e;
+}
+
+.buttonUpload {
+  position: absolute;
+  left: 90%;
+  top: 70px;
+  width: auto;
+  margin: auto;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  background-color: #141414;
+  padding: 10px;
+  margin-top: 131px;
+  /* remove padding from the grid */
+  margin-left: -10px;
+  /* make entire div invisible */
+}
+.timeUploaded {
+  color: #ffffff;
+  font-size: 12px;
+  margin-left: -0.9rem;
+  margin-top: 4rem;
+  position: absolute;
+}
+
+.card {
+  max-width: 100%;
+  margin-bottom: 20px;
+  height: 400px;
+  border-color: #474747;
+  border-radius: 0.5rem;
+  border-width: 1px;
+}
+
+.card-text {
+  color: transparent;
+}
+
+.card-title {
+  margin-top: 200px;
+  overflow: hidden;
+  white-space: normal;
+}
+
+.video {
+  cursor: pointer;
+  object-fit: fill;
+  height: 300px;
+}
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+.container {
+  position: relative;
+  /* move up slightly */
+  background-color: #141414;
+  /* make transparent */
+}
+.container1 {
+  position: relative;
+  /* move up slightly */
+  background-color: rgb(15, 15, 15);
+  /* make transparent */
+  display: none;
+}
+
+.container .card {
+  position: relative;
+  width: 320px;
+  height: 400px;
+  background: #232323;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.container .card:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000000;
+  transition: 0.5s ease-in-out;
+}
+
+.container .card:after {
+  position: absolute;
+  top: 30%;
+  left: -20%;
+  font-size: 12em;
+  font-weight: 800;
+  font-style: italic;
+  color: rgba(255, 255, 25, 0.05);
+}
+
+.container .card .imgBx {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 100%;
+  height: 220px;
+  transition: 0.5s;
+}
+
+.container .card .contentBx {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  transition: 1s;
+  z-index: 10;
+}
+
+.container .card .contentBx h2 {
+  position: relative;
+  font-weight: 600;
+  letter-spacing: 1px;
   color: #fff;
+  margin: 0;
+}
+
+.container .card .contentBx,
+.container .card .contentBx .color {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 20px;
+  transition: 0.5s;
+  opacity: 0;
+  visibility: hidden;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.container .card .contentBx {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0.1s;
+}
+
+.container .card:hover .contentBx .color {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0.6s;
+}
+
+.container .card .contentBx .size h3,
+.container .card .contentBx .color h3 {
+  color: #fff;
+  font-weight: 300;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-right: 10px;
+}
+
+.moreIcon {
+  position: absolute;
+  top: -35px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  background: rgb(0, 0, 0);
+
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.container .card .contentBx .size span {
+  width: 26px;
+  height: 26px;
+  text-align: center;
+  line-height: 26px;
+  font-size: 14px;
+  display: inline-block;
+  color: #111;
+  background: #fff;
+  margin: 0 5px;
+  transition: 0.5s;
+  color: #111;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.container .card .contentBx a {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #fff;
+  border-radius: 4px;
+  margin-top: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  color: #111;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: 0.5s;
+  margin-top: 0;
+}
+
+.container .card:hover .contentBx a {
+  opacity: 1;
+  transform: translateY(0px);
+  transition-delay: 0.75s;
+}
+
+.videotitles {
+  font-size: 18px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  top: -30px;
+  text-align: left;
+}
+
+.videotitles:hover {
+  /* on hover, remove text overflow, however limit text to 3 lines */
+  -webkit-line-clamp: 3;
+}
+
+.tipText {
+  /* move to the left */
+  position: absolute;
+  top: 51%;
+  left: -4px;
+}
+
+.tipButton {
+  /* move button down to be in same line as tipText */
+  position: absolute;
+  top: 43%;
+  transform: translateY(50%);
+  /* move to right */
+  right: 10px;
+  border-radius: 20px;
+}
+
+.authorText {
+  /* move up more */
+  position: absolute;
+  top: 4px;
+  left: 10px;
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.shareText {
+  color: #fff;
+  font-size: 18px;
+  position: absolute;
+  top: 15px;
   left: 50%;
   width: auto;
   margin: auto;
   transform: translate(-50%, -50%);
   z-index: 10;
+}
+
+.authorIcon {
+  /* fit under authorText */
+  position: absolute;
+  top: 55px;
+  left: 1px;
+  font-size: 12px;
+  color: #fff;
+}
+
+.titleInput {
+  /* move up */
+  position: absolute;
+  left: 50%;
+  top: 45px;
+  width: auto;
+  margin: auto;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  width: 400px;
+}
+
+.chooseFile {
+  color: #fff;
+  /* move to the left of page */
+  position: absolute;
+  top: 53px;
+  left: 20px;
+  z-index: 11;
+}
+
+input[type="file"] {
+  background: rgb(0, 0, 0);
+}
+
+.navAccount {
+  /* move to the right of page */
+  position: fixed;
+  top: 30px;
+  right: 20px;
+  height: 40px;
+  font-size: 18px;
+  color: rgb(255, 255, 255);
+}
+
+.navIcon {
+  /* move to the right of page */
+  position: absolute;
+  top: 32px;
+}
+
+.aboutLink {
+  /* move up */
+  margin-top: -30px;
+}
+
+.homeButton {
+  /* move up */
+  margin-top: -41px;
+  position: absolute;
+  left: 950px;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #6e6e6e;
+  color: white;
+}
+
+.footerLink {
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  font-size: 18px;
+  /* move to center of div */
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+}
+
+.homeIcon {
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+}
+
+.homeIcon:hover {
+  color: rgb(0, 0, 0);
+}
+
+.form-control1 {
+  width: 50%;
+  position: absolute;
+  left: 26%;
+  top: 40%;
+}
+
+.custom-file {
+  width: 10%;
+  position: absolute;
+  left: 5%;
+  top: 40%;
+}
+
+.dropdown {
+  background-color: transparent;
+}
+
+.topAuthor {
+  position: absolute;
+  top: -23px;
+  left: 33.9%;
+  transform: translate(-50%, -50%);
+  font-size: 16px;
+  color: #fff;
+}
+
+.custom-file-input {
+  cursor: pointer;
 }

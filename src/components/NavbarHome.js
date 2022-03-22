@@ -20,7 +20,10 @@ class NavbarHome extends Component {
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     </div>
                   </div>
-                <h3 className="navbarAccount">Signed in as:{this.props.account}</h3>
+                <h3 
+                  className="navbarAccount">
+                  Signed in as:{this.props.account.slice(0,5)}...{this.props.account.slice(-4)}
+                </h3>
               </div>
             </nav>
            </div>
