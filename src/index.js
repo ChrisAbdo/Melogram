@@ -9,6 +9,7 @@ import Home from './components/Home';
 import Main from './components/Main';
 import Reroute from './components/Reroute';
 import { MetaMaskProvider } from "metamask-react";
+import TestHome from './components/TestHome';
 
 
 
@@ -18,8 +19,9 @@ render(
     <MetaMaskProvider>
     <BrowserRouter>
         <Routes>
-            <Route path="/" element={<Reroute />} />
+            <Route path="/" element={<TestHome />} />
             <Route path="/home" element={<App />} />
+            <Route path="/test" element={<Reroute />} />
         </Routes>
     </BrowserRouter>
     </MetaMaskProvider>,

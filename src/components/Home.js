@@ -40,7 +40,7 @@ function Home() {
       <h1>Home1</h1>
       <button
         id='btn-01'
-        onClick={connectWallet}
+        onClick={requestAccount}
       >connect wallet</button>
       
     </div>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Identicon from 'identicon.js';
+import './Main.css';
 
 class Main extends Component {
 
@@ -10,7 +11,8 @@ class Main extends Component {
           <main role="main" className="col-lg-12 ml-auto mr-auto" style={{ maxWidth: '500px' }}>
             <div className="content mr-auto ml-auto">
               <p>&nbsp;</p>
-              <h2>Share Image</h2>
+              <div className="uploadForm">
+              <h2 className="shareText">Share Image</h2>
               <form onSubmit={(event) => {
                 event.preventDefault()
                 const description = this.imageDescription.value
@@ -29,10 +31,11 @@ class Main extends Component {
                   </div>
                 <button type="submit" class="btn btn-primary btn-block btn-lg">Upload!</button>
               </form>
+              </div>
               <p>&nbsp;</p>
               { this.props.images.map((image, key) => {
                 return(
-                  <div className="card mb-4" key={key} >
+                  <div className="uploadCard card mb-4" key={key} >
                     <div className="card-header">
                       <img
                         className='mr-2'

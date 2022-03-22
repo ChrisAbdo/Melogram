@@ -16,12 +16,11 @@ class NavbarHome extends Component {
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                       <a class="nav-link" href="/home"><b>Marketplace</b></a>
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      <a class="nav-link" href="/contact"><b>Contact</b></a>
+                      <a class="nav-link" href="/test"><b>Contact</b></a>
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     </div>
                   </div>
-                <h3 className="navbarAccount">Signed in as: {this.props.account}
-                </h3>
+                <h3 className="navbarAccount">Signed in as:{this.props.account}</h3>
               </div>
             </nav>
            </div>

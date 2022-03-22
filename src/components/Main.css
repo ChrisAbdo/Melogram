@@ -1,0 +1,12 @@
+.row1 {
+  justify-content: center;
+  /* place cards under lead text */
+  position: absolute;
+  top: 23rem;
+  color: #fff;
+  left: 50%;
+  width: auto;
+  margin: auto;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}

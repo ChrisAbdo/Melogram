@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 import { ethers } from 'ethers'
 import './Navbar.css'
+import Web3 from 'web3';
+
 
 
 function Navbar () {
@@ -14,11 +16,11 @@ function Navbar () {
 
       try{
         // request account access
+        const web3 = window.web3
         const accounts = await window.ethereum.request({
           method: 'eth_requestAccounts'
         });
         setWalletAddress(accounts[0])
-        
       } catch (error) {
         console.log('error connecting...');
       }
