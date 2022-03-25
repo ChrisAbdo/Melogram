@@ -18,6 +18,8 @@ class NavbarHome extends Component {
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                       <a class="nav-link" href="/test"><b>Contact</b></a>
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      <a class="nav-link" href="/faq"><b>FAQ</b></a>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     </div>
                   </div>
                 <h3 

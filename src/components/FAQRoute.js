@@ -7,12 +7,13 @@ import Web3 from 'web3';
 import './App.css';
 import Home from './Home';
 import NavbarHome from './NavbarHome';
+import FAQ from './FAQ';
 
 //Declare IPFS
 const ipfsClient = require('ipfs-http-client')
 const ipfs = ipfsClient({ host: 'ipfs.infura.io', port: 5001, protocol: 'https' }) // leaving out the arguments will default to these values
 
-class Reroute extends Component {
+class FAQRoute extends Component {
 
   async componentWillMount() {
     await this.loadWeb3()
@@ -37,8 +38,6 @@ class Reroute extends Component {
     // Load account
     const accounts = await web3.eth.getAccounts()
     this.setState({ account: accounts[0] })
-    
-    
     // Network ID
     const networkId = await web3.eth.net.getId()
     const networkData = Decentragram.networks[networkId]
@@ -111,8 +110,7 @@ class Reroute extends Component {
       account: '',
       decentragram: null,
       images: [],
-      loading: true,
-      
+      loading: true
     }
 
     this.uploadImage = this.uploadImage.bind(this)
@@ -126,12 +124,11 @@ class Reroute extends Component {
         <NavbarHome account={this.state.account} />
         { this.state.loading
           ? <div id="loader" className="text-center mt-5"><p>Loading...</p></div>
-          : <Home
+          : <FAQ
               images={this.state.images}
               captureFile={this.captureFile}
               uploadImage={this.uploadImage}
               tipImageOwner={this.tipImageOwner}
-              account={this.state.account}
             />
         }
         
@@ -141,4 +138,4 @@ class Reroute extends Component {
   }
 }
 
-export default Reroute;
+export default FAQRoute;

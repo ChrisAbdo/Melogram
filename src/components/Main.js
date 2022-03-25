@@ -2,17 +2,32 @@ import React, { Component, useState } from 'react';
 import './Main.css';
 import Identicon from 'identicon.js';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import Home from './Home'
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import Modal from '@mui/material/Modal';
+import 'bootstrap/dist/css/bootstrap.css';
+import { Modal } from '@mui/material';
+
+
+
 
 
 
 
 class Main extends Component {
-  
-  render() {
+  constructor(props) {
+    super(props);
+    this.state = {
+        modal: false
+    };
+    this.toggle = this.toggle.bind(this);
+};
+
+toggle() {
+    this.setState({modal: !this.state.modal});
+}
+render() {
     return (
         
           <div class="grid-container">
@@ -65,6 +80,7 @@ class Main extends Component {
 
             
             { this.props.images.map((image, key) => {
+              
               return(
                 <div>
                 
@@ -75,8 +91,7 @@ class Main extends Component {
                       <h1 className="topAuthor">Uploaded by: {image.author
                         // slice first 5 and last 4 of account name
                         .slice(0, 5) + '...' + image.author.slice(-4)}</h1>
-                     
-                      <MoreHorizIcon type="button" className="moreIcon text-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" />
+                        <MoreHorizIcon className="moreIcon text-primary"/>
                       
                     <video
                         className="video border-secondary border-bottom"

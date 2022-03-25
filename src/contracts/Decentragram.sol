@@ -11,6 +11,7 @@ contract Decentragram {
         string description;
         uint256 tipAmount;
         address payable author;
+        string username;
     }
 
     event ImageCreated(
@@ -18,7 +19,8 @@ contract Decentragram {
         string hash,
         string description,
         uint256 tipAmount,
-        address payable author
+        address payable author,
+        string username
     );
 
     event ImageTipped(
@@ -33,15 +35,17 @@ contract Decentragram {
         name = "Decentragram";
     }
 
-    function uploadImage(string memory _imgHash, string memory _description)
-        public
-    {
+    function uploadImage(
+        string memory _imgHash,
+        string memory _description,
+        string memory _username
+    ) public {
         // Make sure the image hash exists
         require(bytes(_imgHash).length > 0);
-
         // Make sure image description exists
         require(bytes(_description).length > 0);
-
+        // make sure username exists
+        require(bytes(_username).length > 0);
         // Make sure uploader address exists
         require(msg.sender != address(0));
 
@@ -54,11 +58,18 @@ contract Decentragram {
             _imgHash,
             _description,
             0,
-            msg.sender
+            msg.sender,
+            _username
         );
-
         // Trigger an event
-        emit ImageCreated(imageCount, _imgHash, _description, 0, msg.sender);
+        emit ImageCreated(
+            imageCount,
+            _imgHash,
+            _description,
+            0,
+            msg.sender,
+            _username
+        );
     }
 
     function tipImageOwner(uint256 _id) public payable {
