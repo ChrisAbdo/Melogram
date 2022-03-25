@@ -62,7 +62,7 @@ render() {
             </form>
         
             <small className="navAccount">
-              <small id="account"              >
+              <small id="account">
               { this.props.account
               ? <img
                 className='navIcon'
