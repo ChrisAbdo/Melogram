@@ -1,8 +1,3 @@
-## ```"Decentralized Photo Social Media."```
+Melomania is a decentralized music crowdsourcing and marketplace platform. I have been building this over the course of the last 4 months.
 
-![Video URL](https://emojipedia-us.s3.amazonaws.com/content/2020/04/05/yt.png)
-
-[Tutorial URL](https://www.youtube.com/watch?v=8rhueOcTu8k)
-
-## 🔧 Project Diagram:
-![Project Diagram](https://i.gyazo.com/e7fa5d05ef7806419b4897ecc668a045.png)
+Utilizing a modern Web3 Stack (React, Truffle, Ganache), Melomania has a Solidity smart contract which is ready to deploy on the Ethereum mainnet.
